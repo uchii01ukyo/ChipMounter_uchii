@@ -1,0 +1,117 @@
+GitHub
+token: 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 
+
+
+Command Prompt
+> pip show sip　　　#ファイルのパス表示（pip内専用） 
+> start c:\users\... #ディレクトリの表示
+
+File Contents
+M5StackFW
+ - M5grbl_serial
+    - GrblControl.cpp
+    - GrblControl.h
+    - M5grbl_serial.ino ... M5stackに書き込むメインコード
+ - M5GRBL_mamo.md ... M5Stackに使うGcodeの記述法
+Script
+ - PickerCalib
+    - mainwindow.ui ... QtDesignerで作ったGUIパーツ配置データ（配置のみ)
+ - autodispense.py ... 半田ディスペンサ関連のコード？
+ - autopick.py ... ?
+ - calib.py ... mainwindowを動かすメインコード（GUIパーツの機能とwindowの立ち上げ）
+ - gbr2pos.py ... クリーム半田の位置と面積を指定
+ - m.bat ... コマンドプロンプトでpyuic5を実行したときのコマンド
+ - mainwindow.py ... mainwindow.uiをpyuic5でPython化したコード
+ - picker.py ... ピックアップに関するコード（libraryとしてimportして関数を使う）
+ - udp_serial.py ... UDP通信関連？
+
+
+Gcode
+//Arduino内
+_GRBL0.Gcode("G1 X5Y5Z5 F200");
+//シリアル送信
+G0X1Y1Z1
+
+
+SIP
+Name: sip
+Version: 6.4.0
+Summary: A Python bindings generator for C/C++ libraries
+Home-page: https://www.riverbankcomputing.com/software/sip/
+Author: Riverbank Computing Limited
+Author-email: info@riverbankcomputing.com
+License: SIP
+Location: c:\users\owner\appdata\local\programs\python\python39\lib\site-packages
+Requires: packaging, setuptools, toml
+Required-by:
+
+PyQt5
+Name: PyQt5
+Version: 5.15.6
+Summary: Python bindings for the Qt cross platform application toolkit
+Home-page: https://www.riverbankcomputing.com/software/pyqt/
+Author: Riverbank Computing Limited
+Author-email: info@riverbankcomputing.com
+License: GPL v3
+Location: c:\users\owner\appdata\local\programs\python\python39\lib\site-packages
+Requires: PyQt5-Qt5, PyQt5-sip
+Required-by:
+
+Python3
+Location: c:\users\owner\appdata\local\programs\python\python39
+
+
+
+---------
+Motor
+  //void GRBL::Init(uint32_t x_step,uint32_t y_step,uint32_t z_step,uint32_t acc)
+  // $0: #define DEFAULT_X_STEPS_PER_MM 250.0
+  // $1: #define DEFAULT_Y_STEPS_PER_MM 250.0
+  // $2: #define DEFAULT_Z_STEPS_PER_MM 250.0
+  // $8: #define DEFAULT_ACCELERATION (10.0*60*60) // 10 mm/min^2
+
+  // motor   : 1.8deg/step = 200step / rotate
+  // gear    :  20 mount / rorate
+  // X/Y belt:  1 mount = 2 mm
+  // Z screw :  8mm / rotate
+  // -> XY: 10 step = 1 mount = 2mm, 5step / mm
+  //    Z : 200step = 8mm            25step / mm
+
+  // -> XY: 10 step = 1 mount = 1mm, 10step / mm
+  //    Z : 200step = 2mm            100step / mm
+  //#define XY_STEP_PER_MM 5 // 1mm(cmd) -> 2mm(actual)
+  //#define Z_STEP_PER_MM 25 // 1mm(cmd) -> 4mm(actual)
+  //#define ACC 20 // acc is converted *(60*60) in M5-GRBL
+
+
+#define XY_STEP_PER_MM 160 // 1mm(cmd) -> 2mm(actual), 1/32 microstep
+  //#define Z_STEP_PER_MM 800 // 1mm(cmd) -> 4mm(actual), 1/32 microstep
+#define Z_STEP_PER_MM 160 // 1mm(cmd) -> 4mm(actual), 1/32 microstep, 1/5
+#define ACC 500 // acc is converted *(60*60) in M5-GRBL, 1/32 microstep
+
+// A-axis (pick-up head) motor: 6400step/rotaate
+// $1=64, $5=10000 -> 100mm=1rotate 
+
+  //  _GRBL0.Init(XY_STEP_PER_MM, XY_STEP_PER_MM, Z_STEP_PER_MM, ACC);
+  //  _GRBL1.Init(XY_STEP_PER_MM, XY_STEP_PER_MM, Z_STEP_PER_MM, ACC);
+
+
+^^^^^^^^^
+Homing
+_GRBL0.Gcode("$X");
+_GRBL0.Gcode("$6=0");
+_GRBL0.Gcode("$H");
+_GRBL0.Gcode("G91 G1 X-0.6Y5Z-7 F150");
+_GRBL0.Gcode("G92 X0Y0Z0 F150"); //home
+_GRBL0.Gcode("$6=96");
+
+^^^^^^^^^^^
+        // M3:Solnenoid A on
+        // M5:Solnenoid A off
+        // M7:Solnenoid B on
+        // M9:Solnenoid B off
+        // M10: Solnenoid C on
+        // M11: Solnenoid C off
+        // M12: Solnenoid D on
+        // M13: Solnenoid D off
+
