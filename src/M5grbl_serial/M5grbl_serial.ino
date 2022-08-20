@@ -25,12 +25,6 @@ void setup() {
   M5.Power.begin();
   Serial.begin(115200);
 
-  /*
-  #define XY_STEP_PER_MM 160 // 1mm(cmd) -> 2mm(actual), 1/32 microstep
-  #define Z_STEP_PER_MM 160 // 1mm(cmd) -> 4mm(actual), 1/32 microstep, 1/5
-  #define ACC 500 // acc is converted *(60*60) in M5-GRBL, 1/32 microstep
-  */
-
   // GRBL0 Setting
   _GRBL0.Init();
   _GRBL0.Gcode("$0=160"); //X[step/mm]
@@ -61,63 +55,28 @@ void setup() {
   // PinMode
   pinMode(SOL_A, OUTPUT); digitalWrite(SOL_A, 0);
   pinMode(SOL_B, OUTPUT); digitalWrite(SOL_B, 0);
-  // pinMode(SOL_C, OUTPUT); digitalWrite(SOL_C, 0);
-  pinMode(SOL_D, OUTPUT); digitalWrite(SOL_D, 0);
 
   // UserInterface
   Serial.begin(115200);
-  m5.Lcd.setTextColor(WHITE, BLACK);
-  m5.Lcd.setTextSize(3);
-  m5.Lcd.setBrightness(100);
-  M5.Lcd.setCursor(70, 20);
-  M5.Lcd.println("ChipMounter");
-  M5.Lcd.setCursor(60, 200);
-  M5.Lcd.println("A");
-  M5.Lcd.setCursor(155, 200);
-  M5.Lcd.println("B");
-  M5.Lcd.setCursor(250, 200);
-  M5.Lcd.println("C");
-  m5.Lcd.setTextSize(2);
-  M5.Lcd.setCursor(100, 55);
-  M5.Lcd.println("2022.07.21");
+  initial_LCD();
 
-  //
+  /*
   ledcSetup(LEDC_CHANNEL_0, LEDC_BASE_FREQ, LEDC_TIMER_BIT);
   ledcAttachPin(TDS_CLK_PIN, LEDC_CHANNEL_0);
   ledcWrite(LEDC_CHANNEL_0, 0x00);
+  */
 
   // Inicial Solenoid
-  SolenoidStatus(0, 0);
-  SolenoidStatus(1, 0);
-  SolenoidStatus(2, 0);
-  SolenoidStatus(3, 0);
+  digitalWrite(SOL_A, 0);
+  digitalWrite(SOL_B, 0);
   
   while (Serial.available()) Serial.read(); // force serial buffer empty
   ReadGRBLstatus(0);
   ReadGRBLstatus(1);
+  progress(0);
   Serial.println("ready");
 }
 
-
-void SolenoidStatus(int ch, int status){
-  fGRBL = 0;
-  if (ch == 0) {
-    if (status == 1) digitalWrite(SOL_A, 1);
-    else digitalWrite(SOL_A, 0);
-  }
-  else if (ch == 1) {
-    if (status == 1) digitalWrite(SOL_B, 1);
-    else digitalWrite(SOL_B, 0);
-  }
-  else if (ch == 2){
-    if (status == 1) ledcWrite(LEDC_CHANNEL_0, SOLC_ON_DUTY);
-    else ledcWrite(LEDC_CHANNEL_0, SOLC_OFF_DUTY);
-  }
-  else if (ch == 3){
-    if (status == 1) digitalWrite(SOL_D, 1);
-    else digitalWrite(SOL_D, 0);
-  }
-}
 
 void ReadGRBLstatus(int ch) {
   String s;
@@ -126,44 +85,26 @@ void ReadGRBLstatus(int ch) {
   Serial.print(s);
 }
 
-
 int pos = 0;
 char buf[1024];
 int fSolCD = 0;
+int count;
+String fileName;
+String totalParts;
+String partNum;
+
 void loop() {
   char c;
   int ch, i;
   
   M5.update();
-  // unlock
+  
   if (M5.BtnA.wasPressed()) {
-    _GRBL0.Gcode("$X");
-    delay(100);
-    _GRBL0.Gcode("$X");
-    ReadGRBLstatus(0);
-    delay(100);
-    _GRBL1.Gcode("$X");
-    delay(100);
-    _GRBL1.Gcode("$X");
     ReadGRBLstatus(1);
-  }
-
-   if (M5.BtnB.wasPressed()) {
-    _GRBL0.Gcode("$H");
-    delay(100);
-    _GRBL0.Gcode("G1X-6");
-    delay(100);
-    _GRBL0.Gcode("G1X-1");
-    delay(100);
-    _GRBL0.Gcode("G1X-6");
-    delay(100);
-    _GRBL0.Gcode("G1X-1");
-    delay(100);
-    _GRBL0.Gcode("G1X-6");
-    delay(100);
-    _GRBL0.Gcode("G1X-2.5");
-    delay(100);
     ReadGRBLstatus(0);
+  }
+  if (M5.BtnB.wasPressed()) {
+    
   }
 
   while (Serial.available()) {
@@ -174,16 +115,36 @@ void loop() {
       if (pos != 0) {
         Serial.print('['); Serial.print(buf); Serial.println(']');
       }
-      fGRBL = 1;
+      
+      if (buf[0] == 'S') {
+        fGRBL = 0;
+        if(buf[1]=='1'){
+          fileName = buf;
+          fileName.replace("S1", "");
+          m5.Lcd.setTextSize(3);
+          M5.Lcd.setCursor(20, 20);
+          M5.Lcd.println(fileName);
+        }
+        if(buf[1]=='2'){
+          totalParts = buf;
+          totalParts.replace("S2", "");
+          m5.Lcd.setTextSize(2);
+          M5.Lcd.setCursor(100, 150);
+          M5.Lcd.println(totalParts);
+        }
+        if(buf[1]=='3'){
+          partNum = buf;
+          partNum.replace("S3", "");
+          float percent=partNum.toInt()/totalParts.toInt();
+          progress(percent);
+        }
+      }
       if (buf[0] == 'M') {
-        if (buf[1] == '3') SolenoidStatus(0, 1);      // M3:Solnenoid A on
-        else if (buf[1] == '5') SolenoidStatus(0, 0); // M5:Solnenoid A off
-        else if (buf[1] == '7') SolenoidStatus(1, 1); // M7:Solnenoid B on
-        else if (buf[1] == '9') SolenoidStatus(1, 0); // M9:Solnenoid B off
-        else if (buf[1] == '1' && buf[2] == '0') SolenoidStatus(2, 1); // M10: Solnenoid C on
-        else if (buf[1] == '1' && buf[2] == '1') SolenoidStatus(2, 0); // M11: Solnenoid C off
-        else if (buf[1] == '1' && buf[2] == '2') SolenoidStatus(3, 1); // M12: Solnenoid D on
-        else if (buf[1] == '1' && buf[2] == '3') SolenoidStatus(3, 0); // M13: Solnenoid D off
+        fGRBL = 1;
+        if (buf[1] == '3') digitalWrite(SOL_A, 1);      // M3:Solnenoid A on
+        else if (buf[1] == '5') digitalWrite(SOL_A, 0); // M5:Solnenoid A off
+        else if (buf[1] == '7') digitalWrite(SOL_B, 1); // M7:Solnenoid B on
+        else if (buf[1] == '9') digitalWrite(SOL_A, 0); // M9:Solnenoid B off
       }
       if (fGRBL == 1) {
         ch = 0;
@@ -203,8 +164,36 @@ void loop() {
           ReadGRBLstatus(1);
         }
       }
-      pos = 0;
+    pos = 0;
     }
-    else buf[pos++] = c;
+  else buf[pos++] = c;
   }
+}
+
+// ----------
+void progress(float percent){
+  M5.Lcd.progressBar(20,60,280,20,percent); // posX, posY, width, height 
+  m5.Lcd.setTextSize(2);
+  M5.Lcd.setCursor(130, 90);
+  M5.Lcd.println(int(count));
+  M5.Lcd.setCursor(170, 90);
+  M5.Lcd.println("%");
+}
+
+void initial_LCD(){
+  m5.Lcd.setTextColor(WHITE, BLACK);
+  m5.Lcd.setBrightness(100);
+  m5.Lcd.setTextSize(3);
+  M5.Lcd.setCursor(20, 20);
+  M5.Lcd.println("DataName.csv");
+  m5.Lcd.setTextSize(2);
+  M5.Lcd.setCursor(45, 220);
+  M5.Lcd.println("Tune");
+  M5.Lcd.setCursor(135, 220);
+  M5.Lcd.println("Pause");
+  M5.Lcd.setCursor(235, 220);
+  M5.Lcd.println("Stop");
+  m5.Lcd.setTextSize(2);
+  M5.Lcd.setCursor(20, 150);
+  M5.Lcd.println("Parts:");
 }
