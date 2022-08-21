@@ -12,6 +12,8 @@ filePath = '/Users/uchiiukyo/ChipMounter_uchii/src/sample.csv'
 down=3
 trayPosX=[1,1]
 trayPosY=1
+shiftX=0.2; shiftY=0.2
+feed=0.2
 # -----------------------------
 
 def main():
@@ -33,6 +35,10 @@ def main():
     finish_gcode()
 
 def generation_gcode(posX, posY, rot, trayNum):
+    send_serial("G1Z" + str(down))  # up
+    send_serial("G1X-" + str(trayPosX[int(trayNum)]-shiftX) + "Y-" + str(trayPosY)-shiftY) # trayhole
+    send_serial("G1Z-" + str(down)) # down
+    send_serial("G1Y" + feed)       # feeder
     send_serial("G1Z" + str(down))  # up
     send_serial("G1X-" + str(trayPosX[int(trayNum)]) + "Y-" + str(trayPosY)) # tray
     send_serial("G1Z-" + str(down)) # down
@@ -61,7 +67,7 @@ def send_serial(send_command):
 
 def get_totalLine(filePath):
     with open(filePath) as myfile:
-        totalLines = sum(1 for line in myfile)
+        totalLines = sum(1 for line in myfile) - 1
     return totalLines
 
 def get_fileName(filePath):
