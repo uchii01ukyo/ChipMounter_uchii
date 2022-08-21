@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project updated="2022/08/21 15:16:48" created="2022/08/21 15:13:45" name="ChipMounter" version="1.0">
+ <machine laser="FABOOL_CO2L_FDS" type="FaboolLaserDS"/>
+ <settings>
+  <workarea height="630" width="1050"/>
+  <driverPower y="980" x="400"/>
+ </settings>
+ <svg xml:space="preserve" viewBox="0 0 512 512" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+   <symbol imagedata-type="vectorStroke" rasterDpi="254" laserPower="30" id="fc45f27c-d19c-4eae-b397-520f2d38fec3" name="ChipMounter_1.dxf" times="1" hatch="horizontal(0.10)" headSpeed="6000" enable="1">
+    <g>
+     <path stroke="#000000" d="M-143.1,-33L-402,-33L-402,-23L-367.9,-23L-367.9,-20L-352.9,-20L-352.9,-23L-188.1,-23L-188.1,-20L-173.1,-20L-173.1,-23L-143.1,-23L-143.1,-33" fill="none"/>
+    </g>
+   </symbol>
+   <symbol imagedata-type="vectorStroke" rasterDpi="254" laserPower="30" id="871cf911-05b3-4251-8e66-94d8e6fda549" name="ChipMounter_2.dxf" times="1" hatch="horizontal(0.10)" headSpeed="6000" enable="1">
+    <g>
+     <path stroke="#000000" d="M-96.2003,-33L-289,-33L-289,-23L-254.9,-23L-254.9,-20L-239.9,-20L-239.9,-23L-138.1,-23L-138.1,-20L-123.1,-20L-123.1,-23L-96.2003,-23L-96.2003,-33" fill="none"/>
+    </g>
+   </symbol>
+   <symbol imagedata-type="vectorStroke" rasterDpi="254" laserPower="30" id="64fd26d8-471c-4447-af43-653424bf3f46" name="ChipMounter_3.dxf" times="1" hatch="horizontal(0.10)" headSpeed="6000" enable="1">
+    <g>
+     <path stroke="#000000" d="M-284.9,3L-269.9,3L-269.9,0L-108.1,0L-108.1,3L-93.1003,3L-93.1003,0L-89.0003,0L-89.0003,-20L-93.1003,-20L-93.1003,-23L-108.1,-23L-108.1,-20L-269.9,-20L-269.9,-23L-284.9,-23L-284.9,-20L-289,-20L-289,0L-284.9,0L-284.9,3" fill="none"/>
+    </g>
+   </symbol>
+   <symbol imagedata-type="vectorStroke" rasterDpi="254" laserPower="30" id="755d28ae-42ce-41d3-91ec-9a2664ae3f86" name="ChipMounter_4.dxf" times="1" hatch="horizontal(0.10)" headSpeed="6000" enable="1">
+    <g>
+     <path stroke="#000000" d="M-394.8,-285L-394.8,-269.8L-398,-269.8L-398,-285L-394.8,-285" fill="none"/>
+     <path stroke="#000000" d="M-146.2,-93.0003L-146.2,-108.2L-143,-108.2L-143,-93.0003L-146.2,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-146.2,-123L-146.2,-138.2L-143,-138.2L-143,-123L-146.2,-123" fill="none"/>
+     <path stroke="#000000" d="M-352.8,-93.0003L-368,-93.0003L-368,-96.2003L-352.8,-96.2003L-352.8,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-146.2,-285L-143,-285L-143,-269.8L-146.2,-269.8L-146.2,-285" fill="none"/>
+     <path stroke="#000000" d="M-188.2,-93.0003L-188.2,-96.2003L-173,-96.2003L-173,-93.0003L-188.2,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-143,-255L-143,-239.8L-146.2,-239.8L-146.2,-255L-143,-255" fill="none"/>
+     <path stroke="#000000" d="M-398,-93.0003L-398,-108.2L-394.8,-108.2L-394.8,-93.0003L-398,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-139,-89.0003L-139,-289L-402,-289L-402,-89.0003L-139,-89.0003" fill="none"/>
+    </g>
+   </symbol>
+   <symbol imagedata-type="vectorStroke" rasterDpi="254" laserPower="30" id="e11ca114-2ba5-4f18-bc9d-c62927b257c5" name="ChipMounter_5.dxf" times="1" hatch="horizontal(0.10)" headSpeed="6000" enable="1">
+    <g>
+     <path stroke="#000000" d="M-222.2,-32.1003L-212,-32.1003L-212,-28.9003L-222.2,-28.9003L-222.2,-32.1003" fill="none"/>
+     <path stroke="#000000" d="M-162.2,-105.9L-162.2,-109.1L-152,-109.1L-152,-105.9L-162.2,-105.9" fill="none"/>
+     <path stroke="#000000" d="M-162.2,-28.9003L-162.2,-32.1003L-152,-32.1003L-152,-28.9003L-162.2,-28.9003" fill="none"/>
+     <path stroke="#000000" d="M-192,-109.1L-192,-105.9L-202.2,-105.9L-202.2,-109.1L-192,-109.1" fill="none"/>
+     <path stroke="#000000" d="M-202.2,-32.1003L-192,-32.1003L-192,-28.9003L-202.2,-28.9003L-202.2,-32.1003" fill="none"/>
+     <path stroke="#000000" d="M-182.2,-105.9L-182.2,-109.1L-172,-109.1L-172,-105.9L-182.2,-105.9" fill="none"/>
+     <path stroke="#000000" d="M-172,-28.9003L-182.2,-28.9003L-182.2,-32.1003L-172,-32.1003L-172,-28.9003" fill="none"/>
+     <path stroke="#000000" d="M-212,-109.1L-212,-105.9L-222.2,-105.9L-222.2,-109.1L-212,-109.1" fill="none"/>
+     <path stroke="#000000" d="M-402,-24.0002L-139,-24.0002L-139,-289L-402,-289L-402,-24.0002" fill="none"/>
+     <path stroke="#000000" d="M-146.2,-285L-143,-285L-143,-269.8L-146.2,-269.8L-146.2,-285" fill="none"/>
+     <path stroke="#000000" d="M-398,-93.0003L-398,-108.2L-394.8,-108.2L-394.8,-93.0003L-398,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-146.2,-93.0003L-146.2,-108.2L-143,-108.2L-143,-93.0003L-146.2,-93.0003" fill="none"/>
+     <path stroke="#000000" d="M-394.8,-285L-394.8,-269.8L-398,-269.8L-398,-285L-394.8,-285" fill="none"/>
+     <path stroke="#000000" d="M-372.5,-66.0002C-372.5,-67.1047,-373.395,-68.0002,-374.5,-68.0002C-375.604,-68.0002,-376.5,-67.1047,-376.5,-66.0002C-376.5,-64.8956,-375.604,-64.0002,-374.5,-64.0002C-373.395,-64.0002,-372.5,-64.8956,-372.5,-66.0002" fill="none"/>
+     <path stroke="#000000" d="M-372.5,-274C-372.5,-275.105,-373.395,-276,-374.5,-276C-375.604,-276,-376.5,-275.105,-376.5,-274C-376.5,-272.896,-375.604,-272,-374.5,-272C-373.395,-272,-372.5,-272.896,-372.5,-274" fill="none"/>
+     <path stroke="#000000" d="M-164.5,-66.0002C-164.5,-67.1047,-165.395,-68.0002,-166.5,-68.0002C-167.604,-68.0002,-168.5,-67.1047,-168.5,-66.0002C-168.5,-64.8956,-167.604,-64.0002,-166.5,-64.0002C-165.395,-64.0002,-164.5,-64.8956,-164.5,-66.0002" fill="none"/>
+     <path stroke="#000000" d="M-164.5,-274C-164.5,-275.105,-165.395,-276,-166.5,-276C-167.604,-276,-168.5,-275.105,-168.5,-274C-168.5,-272.896,-167.604,-272,-166.5,-272C-165.395,-272,-164.5,-272.896,-164.5,-274" fill="none"/>
+    </g>
+   </symbol>
+  </defs>
+  <use xlink:href="#fc45f27c-d19c-4eae-b397-520f2d38fec3" transform="matrix(1,0,0,1,402,33)" rotatedAngle="0"/>
+  <use xlink:href="#871cf911-05b3-4251-8e66-94d8e6fda549" transform="matrix(1,0,0,1,289.827,54.4961)" rotatedAngle="0"/>
+  <use xlink:href="#64fd26d8-471c-4447-af43-653424bf3f46" transform="matrix(1,0,0,1,290.654,64.3386)" rotatedAngle="0"/>
+  <use xlink:href="#64fd26d8-471c-4447-af43-653424bf3f46" transform="matrix(1,0,0,1,289.866,95.9843)" rotatedAngle="0"/>
+  <use xlink:href="#755d28ae-42ce-41d3-91ec-9a2664ae3f86" transform="matrix(1,0,0,1,403.653,393.173)" rotatedAngle="0"/>
+  <use xlink:href="#e11ca114-2ba5-4f18-bc9d-c62927b257c5" transform="matrix(1,0,0,1,672.354,328.685)" rotatedAngle="0"/>
+ </svg>
+</project>
