@@ -1,6 +1,23 @@
-GitHub
-token: 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 
 
+
+
+設定変数を一度に書き込むことはできない（10バイトしかない）
+設定変数は内部に保存されるので、更新したいパラメータだけをコメントから出すといい
+
+----
+ターミナル権限を許可
+chmod u+x FILE.command
+
+------
+Calibration 
+$0,1,2が主要パラメータっぽい
+なんだかんだあってとりあえず一律160に設定
+
+X:1=31.9mm
+Y:1=31.4mm
+Z:1=15.0mm
+
+-----
 
 Command Prompt
 > pip show sip　　　#ファイルのパス表示（pip内専用） 
