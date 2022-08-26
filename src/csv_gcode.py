@@ -4,9 +4,6 @@ import time
 import os
 import socket
 
-# ---- Serial Setting ---------
-port_name = "/dev/cu.SLAB_USBtoUART"
-speed = 115200
 filePath = '/Users/uchiiukyo/ChipMounter_uchii/data/sample.csv'
 # ---- Fabrication Setting [mm] ----
 trayPosX=[34.000, 30.000]
