@@ -8,22 +8,22 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
 ## ファイル概要
-・start.command  
+#### ・start.command  
  = csv_serial.pyを実行するコマンドファイル  
   
-・start-2.command  
+#### ・start-2.command  
  = udp_serial.pyを実行するコマンドファイル  
   
-・M5grbl_serial.ino  
+#### ・M5grbl_serial.ino  
  = M5Stack本体に書き込んであるファームウェア  
  = Serial通信で受け取ったGCODEをGRBLモジュール等に受け渡す  
  = UI操作やその他細々とした調整コード  
   
-・udp_serial.py  
+#### ・udp_serial.py  
  = M5Stackと常時シリアルが開通させるためのコード  
  = UDP通信で受け取ったコマンドをM5Stackに受け渡す  
   
-・csv_gcode.py  
+#### ・csv_gcode.py  
  = PC側のメインコード  
  = CSVファイルからGCODEを生成  
  = GCODEを決まったタイミングにUDP通信で送信する  
