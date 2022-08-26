@@ -5,7 +5,7 @@
 ## システム
 csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモジュールとバケツリレーしながら、ステップモータ等を制御している。  
   
-<img src="https://github.com/aquonia-inc/Hydroponic/blob/main/doc/SORACOM.png" width="700px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
 ## ファイル概要
 ・start.command  
