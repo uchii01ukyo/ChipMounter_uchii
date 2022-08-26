@@ -74,7 +74,7 @@ commandファイルを実行してもエラーが出る場合は、権限が付�
 ・配線が全て繋がっている．(GRBL-1, GRBL-2, Solenoid)  
 ・M5Stackの画面に「Chip Mounter」の文字が表示されている  
   
-### 手順
+###　手順
 start-2.commandを実行する  
 「Ready...」が出力されることを確認する  
 start.commandを実行する  
