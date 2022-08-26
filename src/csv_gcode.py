@@ -9,12 +9,12 @@ port_name = "/dev/cu.SLAB_USBtoUART"
 speed = 115200
 filePath = '/Users/uchiiukyo/ChipMounter_uchii/data/sample.csv'
 # ---- Fabrication Setting [mm] ----
-trayPosX=[10.000, 30.000]
-trayPosY=1.000
+trayPosX=[34.000, 30.000]
+trayPosY=-30.000
 shiftX=3.800; shiftY=2.000
-feed=-4.000
+feed=4.000
 # 
-down=6.00
+down=5.00
 pulse=[31.900, 31.400, 6.440] # [mm/G1X1], [mm/G1Y1], [mm/G1Z1]
 home=[0.200 , -6.200, -6.000] # X,Y,Z
 # --------- UDP Setting ----------
@@ -71,14 +71,14 @@ def generation_gcode(posX, posY, rot, trayNum):
     send_serial("G1Z0F200")  # up
     send_serial("G1X" + mm_gcode(trayPosX[int(trayNum)],'X') + "Y" + mm_gcode(trayPosY,'Y') + "F200") # tray
     send_serial("G1Z-" + str(down) + "F200") # down
-    send_serial("M3")               # pump ON
+    send_serial("M3")  # pump ON
     send_serial("G1Z0F200")  # up
     send_serial("G1X" + mm_gcode(posX,'X') + "Y" + mm_gcode(posY,'Y') + "F200") # set position
     send_serial("G1A" + str(rot))   # rotation
     send_serial("G1Z-" + str(down) + "F200") # down
     send_serial("M5")               # pump OFF
     send_serial("M7")               # pump ON
-    time.sleep(0.2) # waiting
+    time.sleep(0.05) # waiting
     send_serial("M9")               # pump OFF
     send_serial("G1Z0F200")  # up
 
