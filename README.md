@@ -5,6 +5,8 @@
 ## システム
 csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモジュールとバケツリレーしながら、ステップモータ等を制御している。  
   
+<img src="https://github.com/aquonia-inc/Hydroponic/blob/main/doc/SORACOM.png" width="700px">
+  
 ## ファイル概要
 ・start.command  
  = csv_serial.pyを実行するコマンドファイル  
@@ -67,14 +69,14 @@ chmod u+x start-2.command
 commandファイルを実行してもエラーが出る場合は、権限が付与されているか確認する。  
   
 ## 使い方
-###　確認
+### 確認
 以下の状態になっているか確認する。  
 ・CSVファイルを作成して、コード内にパスを指定してある．  
 ・M5StackとPCはUSBで接続されている．  
 ・配線が全て繋がっている．(GRBL-1, GRBL-2, Solenoid)  
 ・M5Stackの画面に「Chip Mounter」の文字が表示されている  
   
-###　手順
+### 手順
 start-2.commandを実行する  
 「Ready...」が出力されることを確認する  
 start.commandを実行する  
