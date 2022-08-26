@@ -9,24 +9,24 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
   
 ## ファイル概要
 #### ・start.command  
- = csv_serial.pyを実行するコマンドファイル  
+   = csv_serial.pyを実行するコマンドファイル  
   
 #### ・start-2.command  
- = udp_serial.pyを実行するコマンドファイル  
+   = udp_serial.pyを実行するコマンドファイル  
   
 #### ・M5grbl_serial.ino  
- = M5Stack本体に書き込んであるファームウェア  
- = Serial通信で受け取ったGCODEをGRBLモジュール等に受け渡す  
- = UI操作やその他細々とした調整コード  
+   = M5Stack本体に書き込んであるファームウェア  
+   = Serial通信で受け取ったGCODEをGRBLモジュール等に受け渡す  
+   = UI操作やその他細々とした調整コード  
   
 #### ・udp_serial.py  
  = M5Stackと常時シリアルが開通させるためのコード  
  = UDP通信で受け取ったコマンドをM5Stackに受け渡す  
   
 #### ・csv_gcode.py  
- = PC側のメインコード  
- = CSVファイルからGCODEを生成  
- = GCODEを決まったタイミングにUDP通信で送信する  
+   = PC側のメインコード  
+   = CSVファイルからGCODEを生成  
+   = GCODEを決まったタイミングにUDP通信で送信する  
   
 ## 初期設定
 ### ダウンロード
@@ -62,7 +62,7 @@ start-2.command
 シェルスクリプトでコードを実行するために、用いるコマンドプロンプトに実行権限を付与する必要がある。  
 用いるコマンドプロンプトを開いて、以下のコマンドを入力する。  
   
-cd [start.commandのあるディレクトリ]  
+cd start.commandのあるディレクトリ  
 chmod u+x start.command  
 chmod u+x start-2.command  
   
