@@ -1,5 +1,6 @@
 cd /Users/uchiiukyo/ChipMounter_uchii/src/
-python csv_gcode.py
+python udp_serial.py
+open start-2.command
 
 
 
