@@ -8,7 +8,8 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
 詳細は以下のドキュメントにまとめる。  
-https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter System.pdf  
+[Google](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter System.pdf)
+
   
 ## ファイル概要
 #### ・start.command  
@@ -87,7 +88,7 @@ start.commandを実行する
   
 ## GRBLモジュールについて
 非常にクセがあって、大変苦労したので、ドキュメントを残すことにした。
-https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack GRBL Module.pdf  
+[Google](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack GRBL Module.pdf)
   
 ## Author
 Uchii Ukyo  
