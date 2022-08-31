@@ -6,14 +6,13 @@ import socket
 
 filePath = '/Users/uchiiukyo/ChipMounter_uchii/data/sample.csv'
 # ---- Fabrication Setting [mm] ----
-trayPosX=[34.000, 30.000]
-trayPosY=-30.000
+trayPosX=[29.189, 69.585, 107.982]
+trayPosY=-27.24 # 50.21
 shiftX=3.800; shiftY=2.000
 feed=4.000
-# 
-down=5.20
+down=8.000
 pulse=[31.900, 31.400, 6.440] # [mm/G1X1], [mm/G1Y1], [mm/G1Z1]
-home=[0.200 , -6.200, -6.000] # X,Y,Z
+home=[0.000 , -6.800, -3.000] # X,Y,Z
 # --------- UDP Setting ----------
 # global udpSock, Client_Addr, UDP_SERIAL_Addr
 Client_IP = "127.0.0.1"
@@ -61,21 +60,21 @@ def mm_gcode(mm,axis):
     return gcode_str
 
 def generation_gcode(posX, posY, rot, trayNum):
-    send_serial("G90G1Z0F800")  # up
-    send_serial("G90G1X" + mm_gcode(trayPosX[int(trayNum)]+shiftX,'X') + "Y" + mm_gcode(trayPosY-shiftY,'Y') + "F800") # trayhole
-    send_serial("G90G1Z-" + str(down) + "F800") # down
-    send_serial("G91G1Y" + mm_gcode(feed,'Y') + "F800") # feeder
-    send_serial("G91G1Z"+mm_gcode(1,'Z')+ "F800")  # up
+    # send_serial("G90G1X0Y0F800")  # up
+    send_serial("G90G1X" + mm_gcode(trayPosX[int(trayNum)]-shiftX,'X') + "Y" + mm_gcode(trayPosY+shiftY,'Y') + "F400") # trayhole
+    send_serial("G90G1Z-" + str(down) + "F400") # down
+    send_serial("G90G1Y" + mm_gcode(trayPosY+shiftY+feed,'Y') + "F50") # feeder
+    send_serial("G90G1Z-5F400")  # up
     send_serial("G90G1X" + mm_gcode(trayPosX[int(trayNum)],'X') + "Y" + mm_gcode(trayPosY,'Y') + "F800") # tray
     send_serial("G90G1Z-" + str(down) + "F800") # down
     send_serial("M3")  # pump ON
     send_serial("G90G1Z0F800")  # up
     send_serial("G90G1X" + mm_gcode(posX,'X') + "Y" + mm_gcode(posY,'Y') + "F800") # set position
-    send_serial("G1A" + str(rot))   # rotation
-    send_serial("G90G1Z-" + str(down) + "F800") # down
+    send_serial("G91G1A" + str(rot))   # rotation
+    send_serial("G90G1Z-4.6F800") # down
     send_serial("M5")               # pump OFF
     send_serial("M7")               # pump ON
-    time.sleep(0.01) # waiting
+    # time.sleep(0.01) # waiting
     send_serial("M9")               # pump OFF
     send_serial("G90G1Z0F800")  # up
 
@@ -83,13 +82,13 @@ def start_gcode():
     send_serial("$X") # unlock
     send_serial("$H") # homing
     send_serial("G92X0Y0Z0") # origin setting
-    send_serial("G90G1X" + str(home[0]) + "Y" + str(home[1]) + "F800") # origin
-    send_serial("G90G1Z" + str(home[2]) + "F800") # origin
+    send_serial("G90G1X" + str(home[0]) + "Y" + str(home[1]) + "F200") # origin
+    send_serial("G90G1Z" + str(home[2]) + "F200") # origin
     send_serial("G92X0Y0Z0") # origin setting
 
 def finish_gcode():
-    send_serial("G90G1Z0F800")  # up
-    send_serial("G90G1X0Y0F800") # home
+    send_serial("G90G1Z0F200")  # up
+    send_serial("G90G1X0Y0F200") # home
     send_serial("finish") # finish
 
 def get_totalLine(filePath):

@@ -30,7 +30,7 @@ void setup() {
   //_GRBL0.Gcode("$0=160");   //X[step/mm]
   //_GRBL0.Gcode("$1=160");   //Y[step/mm]
   //_GRBL0.Gcode("$2=160");   //Z[step/mm]
-  //_GRBL0.Gcode("$3=30");    //step pulse
+  //_GRBL0.Gcode("$3=100");    //step pulse
   //_GRBL0.Gcode("$4=800");   // default feed rate[mm/min] (for G1)
   //_GRBL0.Gcode("$5=800");   // default seek rate[mm/min] (for G0)
   //_GRBL0.Gcode("$6=32");     // step port invert mask (invert X&Y axis, 32(X))
@@ -46,10 +46,11 @@ void setup() {
 
   // GRBL1 Setting
   //_GRBL1.Init();
-  //_GRBL1.Gcode("$0=64");    //X[step/mm]
+  //_GRBL1.Gcode("$0=10");    //X[step/mm]
   //_GRBL1.Gcode("$3=30");    //step pulse
-  //_GRBL1.Gcode("$4=800");   // default feed rate[mm/min] (for G1)
-  //_GRBL1.Gcode("$5=800");   // default seek rate[mm/min] (for G0)
+  //_GRBL1.Gcode("$4=600");   // default feed rate[mm/min] (for G1)
+  //_GRBL1.Gcode("$5=1000");   // default seek rate[mm/min] (for G0)
+  //_GRBL1.Gcode("$8=50");   // acc[mm/sec^2]
   //_GRBL1.Gcode("$17=0");    // enable homing[bool](1=have to homing first)
   //_GRBL1.Gcode("G91");      // relative mode for GRBL1
   
@@ -161,6 +162,7 @@ void loop() {
           ReadGRBLstatus(1);
         }
       }
+      data[0]='\0';
       pos = 0;
     }
     else buf[pos++] = c;
