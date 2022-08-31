@@ -10,6 +10,7 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 詳細は以下のドキュメントにまとめる。  
 [ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)
   
+  
 ## ファイル概要
 #### ・start.command  
    = csv_serial.pyを実行するコマンドファイル  
@@ -86,8 +87,9 @@ start.commandを実行する
 （M5Stackの画面が切り替わり操作が実行される）  
   
 ## GRBLモジュールについて
-非常にクセがあって、大変苦労したので、ドキュメントを残すことにした。
+非常にクセがあって、大変苦労したので、ドキュメントを残すことにした。  
 [M5Stack_GRBL_Module.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack%20GRBL%20Module.pdf)
+  
   
 ## Author
 Uchii Ukyo  
