@@ -15,7 +15,7 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
   （相対パスを通してあるので、ファイル内の階層構造をいじらないこと）   
 2. 「src/start.command」と「src/start-2.command」の以下の箇所を環境に合わせて変更する．  
 3. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter/src）  
-４. コマンド「chmod u+x start.command」を入力する．（実行尾権限を渡す）  
+4. コマンド「chmod u+x start.command」を入力する．（実行尾権限を渡す）  
   
 ### CSVファイルの準備
 実装部品の位置や角度はCSV形式のファイルから読みとる．  
@@ -23,7 +23,7 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 2. CSVファイルの一番右に新しい行を挿入し、部品に対応するTrayIDを入力する  
 3. 「src/start-2.command」の以下の部分を、ファイルのパスに変更する．  
   
-###　起動
+### 起動
 1. M5Stackと使用PCをUSBで接続する  
 2. M5Stackを再起動する（画面に「Chip Mounter」が表示されている状態にする）  
 3. 以下の配線が適切に接続されているか確認する  
