@@ -4,14 +4,13 @@ import time
 import os
 import socket
 
-filePath = '/Users/uchiiukyo/ChipMounter_uchii/data/sample.csv'
 # ---- Fabrication Setting [mm] ----
 trayPosX=[29.189, 69.585, 107.982]
 trayPosY=-27.24 # 50.21
 shiftX=3.800; shiftY=2.000
 feed=4.000
 down=8.000
-pulse=[31.900, 31.400, 6.440] # [mm/G1X1], [mm/G1Y1], [mm/G1Z1]
+pulse=[31.900, 31.400, 6.440, 18.000] # [mm/G1X1], [mm/G1Y1], [mm/G1Z1], [mm/G1A1]
 home=[0.000 , -6.800, -3.000] # X,Y,Z
 # --------- UDP Setting ----------
 # global udpSock, Client_Addr, UDP_SERIAL_Addr
@@ -29,7 +28,12 @@ udpSock.settimeout(1)
 # --------------------------------
 code_count=0
 
-def main():
+#filePath = '../data/sample.csv'
+
+def main(filePath):
+    # UDP waiting
+    waiting_udp()
+
     send_serial('S1:' + str(get_fileName(filePath)))
     send_serial('S2:' + str(get_totalLine(filePath)))
     send_serial('S3:0')
@@ -56,6 +60,8 @@ def mm_gcode(mm,axis):
         gcode = float(mm)/pulse[1]
     elif(axis=='Z'):
         gcode = float(mm)/pulse[2]
+    elif(axis=='R'):
+        gcode = float(mm)/pulse[3]
     gcode_str=str(round(gcode, 3))
     return gcode_str
 
@@ -70,7 +76,7 @@ def generation_gcode(posX, posY, rot, trayNum):
     send_serial("M3")  # pump ON
     send_serial("G90G1Z0F800")  # up
     send_serial("G90G1X" + mm_gcode(posX,'X') + "Y" + mm_gcode(posY,'Y') + "F800") # set position
-    send_serial("G91G1A" + str(rot))   # rotation
+    send_serial("G91G1A" + mm_gcode(rot,'R'))   # rotation
     send_serial("G90G1Z-4.6F800") # down
     send_serial("M5")               # pump OFF
     send_serial("M7")               # pump ON
@@ -118,6 +124,17 @@ def send_serial(cmd):
                 print("-> OK")
                 break
 
+def waiting_udp():
+    print("wait")
+    while True: 
+        f = open('waiting.txt', 'r')
+        data = f.read()
+        f.close()
+        if(data=='OK'):
+            break
+        print(".",end=" ")
+        time.sleep(0.5) # waiting
+    print("OK")
 
 if __name__ == '__main__':
     main()

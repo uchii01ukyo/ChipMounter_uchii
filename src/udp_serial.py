@@ -10,7 +10,7 @@ speed = 115200
 Client_IP = "127.0.0.1"
 Client_Port = 10031
 Client_Addr = (Client_IP, Client_Port)
-# UDP-Serial server 
+# UDP-Serial server
 UDP_SERIAL_IP = "127.0.0.1"
 UDP_SERIAL_Port = 10030
 UDP_SERIAL_Addr = (UDP_SERIAL_IP, UDP_SERIAL_Port)
@@ -31,7 +31,11 @@ def main():
     print("lock -> unlock")
     send_cmd('$X')
     # send_cmd('$H')
-    print("Ready... Run the start.command")
+
+    f = open('waiting.txt', 'w')
+    f.write('OK')
+    f.close()
+    print("Ready... Python csv_gcode.py")
 
     while True:                                     
         try:

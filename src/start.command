@@ -1,20 +1,8 @@
+#! /bin/bash
 cd /Users/uchiiukyo/ChipMounter_uchii/src/
-python udp_serial.py
+if [ ! -e $"waiting.txt" ]; then
+  touch waiting.txt
+fi
+echo -n "" > waiting.txt
 open start-2.command
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+python csv_gcode.py main -i '../data/sample.csv'
