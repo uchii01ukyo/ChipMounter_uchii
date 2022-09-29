@@ -6,7 +6,7 @@
 参考：https://github.com/akita11/ChipMounter  
   
 ## システム
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture.png" width="400px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture0.png" width="400px"> <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="400px">
   
 [ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)
   
@@ -14,6 +14,8 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
+XYZ軸の機構は3Dプリンターのものをそのまま利用。
+3つのステップモーターでXYZ軸移動、別モーターでZ軸回転、吸引ポンプと吐出ポンプで部品のピッキングをしている。
   
 ## 使い方
 ### 初期設定
