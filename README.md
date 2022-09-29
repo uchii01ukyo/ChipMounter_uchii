@@ -6,7 +6,7 @@
 参考：https://github.com/akita11/ChipMounter  
   
 ## システム
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture0.png" width="400px"> . <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="200px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture0.png" width="400px"> . <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
   
 [ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)
   
