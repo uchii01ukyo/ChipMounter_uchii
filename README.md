@@ -1,7 +1,13 @@
 ## ChipMounter
+電子部品を基板上の指定した位置に配置してくれる機構  
+比較的小さいもの（チップ抵抗やチップコンデンサ等）ならば自動で配置してくれる  
+  
+以下のコードを参考にさせていただきました．  
 参考：https://github.com/akita11/ChipMounter  
   
 ## システム
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture.png" width="700px">
+  
 csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモジュールとバケツリレーしながら、ステップモータ等を制御している。  
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
