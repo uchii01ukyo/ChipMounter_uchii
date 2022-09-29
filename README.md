@@ -12,9 +12,8 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 ## 使い方
 ### 初期設定
 1. ZIP形式でダンロードして好きな場所で解凍する．   
-  （相対パスを通してあるので、ファイル内の階層構造をいじらないこと）   
-2. 「src/start.command」と「src/start-2.command」の以下の箇所を環境に合わせて変更する．  
-3. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter/src）  
+2. 「src/start.command」と「src/start-2.command」内のコードを環境に合わせて変更する．  
+3. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
 4. コマンド「chmod u+x start.command」を入力する．（実行尾権限を渡す）  
   
 ### CSVファイルの準備
