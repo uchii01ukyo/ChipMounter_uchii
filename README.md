@@ -6,7 +6,6 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
-詳細は以下のドキュメントにまとめる。  
 [ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)
   
 ## 使い方
@@ -33,7 +32,7 @@ csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモ�
 M5Stackではコマンドを受信し、それに合わせてアクチュエータ制御、画面表示等を実行する．  
   
 ## GRBLモジュールについて
-非常にクセがあって、大変苦労したので、ドキュメントを残すことにした。  
+非常にクセがあって苦労したので、ドキュメントを残すことにした。  
 [M5Stack_GRBL_Module.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack%20GRBL%20Module.pdf)
   
   
