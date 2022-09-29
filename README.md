@@ -6,11 +6,11 @@
 参考：https://github.com/akita11/ChipMounter  
   
 ## システム
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture.png" width="700px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture.png" width="400px">
   
 csv_gcode.pyで作ったGCODEを、udp_serial.py、M5grbl_serial.ino、GRBLモジュールとバケツリレーしながら、ステップモータ等を制御している。  
   
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="400px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/System.png" width="700px">
   
 [ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)
   
