@@ -1,4 +1,4 @@
-## ChipMounter
+# ChipMounter
 電子部品を基板上の指定した位置に配置してくれる機構  
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture0.png" width="400px">  <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
