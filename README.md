@@ -10,10 +10,17 @@
 参考：https://github.com/akita11/ChipMounter  
   
 ## インストール
+### 環境
++ MacOS Big Sur(11.6.8)
++ Python　2.7.18
++ ArduinoIDE 1.8.13
+  
+### 手順
 1. ZIP形式でダウンロードして好きな場所で開く．   
 2. 「src/start.command」と「src/start-2.command」内のコードを環境に合わせて変更する．  
 3. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
 4. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
+  
   
 ## 使い方
 ### CSVファイルの準備
@@ -29,6 +36,7 @@
   
 起動後、PC上では２つのコマンドプロンプトが開かれ、GCODEの生成->送信が実行される．  
 M5Stackではコマンドを受信し、それに合わせてアクチュエータ制御、画面表示等を実行する．  
+  
   
 ## GRBLモジュールについて
 非常にクセがあって苦労したので、ドキュメントを残すことにした．  
