@@ -11,8 +11,8 @@
   
 ## インストール
 ### 環境
-+ MacOS Big Sur(11.6.8)
-+ Python　2.7.18
++ MacOS Big Sur (11.6.8)
++ Python 2.7.18
 + ArduinoIDE 1.8.13
   
 ### 手順
