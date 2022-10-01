@@ -38,9 +38,13 @@
 M5Stackではコマンドを受信し、それに合わせてアクチュエータ制御、画面表示等を実行する．  
   
   
-## GRBLモジュールについて
+## その他
+### GRBLモジュールについて
 非常にクセがあって苦労したので、ドキュメントを残すことにした．  
-[M5Stack_GRBL_Module.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack%20GRBL%20Module.pdf)
+[M5Stack_GRBL_Module.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/M5Stack%20GRBL%20Module.pdf)  
+  
+### 注意
+BOMおよびその他のデータは、著者によってのみテストされています。情報の不足や誤り、バグがある可能性があります。  
   
   
 ## Author
