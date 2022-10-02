@@ -15,7 +15,7 @@
 １. 以下のコードを環境に合わせて変更する．   
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code0.png" width="600px">
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code1.png" width="400px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code1.png" width="300px">
   
 2. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
 3. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
@@ -28,7 +28,7 @@
 2. CSVファイルの一番右に新しい行を挿入し、部品に対応するTrayIDを入力する．  
 3. 「src/csv_gcode.py」の以下の部分をPOSファイルのパスに変更する．  
   
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code2.png" width="400px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code2.png" width="300px">
   
   
 ### 起動
