@@ -4,6 +4,8 @@ import time
 import os
 import socket
 
+filePath = '../data/sample.csv'
+
 # ---- Fabrication Setting [mm] ----
 trayPosX=[29.189, 69.585, 107.982]
 trayPosY=-23.24 # 50.21
@@ -27,8 +29,6 @@ udpSock.bind(Client_Addr)
 udpSock.settimeout(1)
 # --------------------------------
 code_count=0
-
-filePath = '../data/sample.csv'
 
 def main():
     # UDP waiting

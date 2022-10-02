@@ -2,10 +2,11 @@ import socket
 import serial
 import time
 
-fNoSerial = False
-
 port_name = "/dev/cu.SLAB_USBtoUART"
 speed = 115200
+
+fNoSerial = False
+
 # local client
 Client_IP = "127.0.0.1"
 Client_Port = 10031
