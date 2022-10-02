@@ -16,7 +16,6 @@
   
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code0.png" width="600px">
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code1.png" width="300px">
-M5Stackと接続するポートと送信速度  
   
   
 2. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
