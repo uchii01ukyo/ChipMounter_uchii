@@ -12,10 +12,11 @@
   
 ## インストール  
 ### 手順
-１. 以下のコードを環境に合わせて変更する． 
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
+１. 以下のコードを環境に合わせて変更する．   
+  
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code0.png" width="300px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code1.png" width="200px">
+  
 2. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
 3. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
   
@@ -26,7 +27,9 @@
 1. KiCADから実装基板の部品情報（POSファイル）をCSVで出力する．  
 2. CSVファイルの一番右に新しい行を挿入し、部品に対応するTrayIDを入力する．  
 3. 「src/csv_gcode.py」の以下の部分をPOSファイルのパスに変更する．  
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
+  
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code2.png" width="200px">
+  
   
 ### 起動
 1. M5Stackと使用するPCをUSBで接続する  
