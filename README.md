@@ -4,7 +4,10 @@
 <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture0.png" width="400px">  <img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
   
 3つのステップモーターでXYZ軸移動、別モーターでZ軸回転、吸引ポンプと吐出ポンプで部品のピッキングをしている．  
-（詳細：[ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)）
+  
+詳細：　[ChipMounter_System.pdf](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/ChipMounter%20System.pdf)  
+デモ：　[demo0.mp4](https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/demo0.mp4)    
+
   
 以下のコードを参考にさせていただきました．  
 参考：https://github.com/akita11/ChipMounter  
