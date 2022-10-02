@@ -9,17 +9,15 @@
 以下のコードを参考にさせていただきました．  
 参考：https://github.com/akita11/ChipMounter  
   
-## インストール
-### 環境
-+ MacOS Big Sur (11.6.8)
-+ Python 2.7.18
-+ ArduinoIDE 1.8.13
   
+## インストール  
 ### 手順
-1. ZIP形式でダウンロードして好きな場所で開く．   
-2. 「src/start.command」と「src/start-2.command」内のコードを環境に合わせて変更する．  
-3. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
-4. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
+１. 以下のコードを環境に合わせて変更する． 
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
+2. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
+3. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
   
   
 ## 使い方
@@ -27,7 +25,8 @@
 実装部品の位置や角度はCSV形式のファイルから読みとる．  
 1. KiCADから実装基板の部品情報（POSファイル）をCSVで出力する．  
 2. CSVファイルの一番右に新しい行を挿入し、部品に対応するTrayIDを入力する．  
-3. 「src/start-2.command」の以下の部分を、POSファイルにパスを通す．  
+3. 「src/csv_gcode.py」の以下の部分をPOSファイルのパスに変更する．  
+<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Picture1.png" width="150px">
   
 ### 起動
 1. M5Stackと使用するPCをUSBで接続する  
@@ -46,6 +45,11 @@ M5Stackではコマンドを受信し、それに合わせてアクチュエー�
 ### 注意
 BOMおよびその他のデータは、著者によってのみテストされています。情報の不足や誤り、バグがある可能性があります。  
   
+### テスト環境
+以下の環境で実証済みです．
++ MacOS Big Sur (11.6.8)
++ Python 2.7.18
++ ArduinoIDE 1.8.13
   
 ## Author
 Uchii Ukyo　(https://github.com/uchii01ukyo)
