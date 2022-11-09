@@ -4,9 +4,9 @@
 #define I2C_ADDR0 0x70 // default address (1st)
 #define I2C_ADDR1 0x71 // alternative address (2nd)
 
-#define SOL_A 26
+//#define SOL_A 26
 #define SOL_B 12
-#define SOL_C 13
+//#define SOL_C 13
 #define SOL_D 5
 
 uint8_t fGRBL = 1, fwork=0, fpause=0, f_a=0;
