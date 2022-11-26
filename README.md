@@ -13,18 +13,6 @@
 参考：https://github.com/akita11/ChipMounter  
   
   
-## インストール  
-### 手順
-１. 以下のコードを環境に合わせて変更する．   
-  
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code0.png" width="600px">
-<img src="https://github.com/uchii01ukyo/ChipMounter_uchii/blob/master/doc/Code1.png" width="300px">
-  
-  
-2. コマンドプロンプトを開き、srcディレクトリに移動する．（cd -...-/Chipmounter_uchii/src）  
-3. start.commandの実行権限を渡す．（「chmod u+x start.command」を入力する）
-  
-  
 ## 使い方
 ### CSVファイルの準備
 実装部品の位置や角度はCSV形式のファイルから読みとる．  
